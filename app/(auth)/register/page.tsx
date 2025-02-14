@@ -45,7 +45,7 @@ const RegisterPage = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        toast.warning(data.message || "Registration failed");
+        toast.warning(data?.message || "Registration failed");
       }
 
       toast.success("Registration Successfully!");
