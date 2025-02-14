@@ -45,7 +45,7 @@ const RegisterPage = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        toast.warning(data.message || "Registration failed");
+        toast.warning(data?.message || "Registration failed");
       }
 
       toast.success("Registration Successfully!");
@@ -59,9 +59,9 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gray-50">
+    <div className="flex items-center justify-center w-full h-screen bg-gray-50">
       <Card className="w-full max-w-md p-8 space-y-6">
-        <div className="text-center space-y-2">
+        <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Create an Account</h1>
           <p className="text-muted-foreground">
             Enter your details to create your account
@@ -71,7 +71,7 @@ const RegisterPage = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <div className="relative">
-              <User className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+              <User className="absolute w-5 h-5 left-3 top-3 text-muted-foreground" />
               <Input
                 type="text"
                 placeholder="User name"
@@ -86,7 +86,7 @@ const RegisterPage = () => {
           </div>
           <div className="space-y-2">
             <div className="relative">
-              <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+              <Mail className="absolute w-5 h-5 left-3 top-3 text-muted-foreground" />
               <Input
                 type="email"
                 placeholder="Email"
@@ -101,15 +101,16 @@ const RegisterPage = () => {
           </div>
           <div className="space-y-2">
             <div className="relative">
-              <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+              <Lock className="absolute w-5 h-5 left-3 top-3 text-muted-foreground" />
               <Input
                 type="password"
-                placeholder="Password"
+                placeholder="password"
                 className="pl-10"
                 value={formData.password}
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
                 }
+                data-testid="password-input"
                 required
               />
             </div>
@@ -117,15 +118,16 @@ const RegisterPage = () => {
 
           <div className="space-y-2">
             <div className="relative">
-              <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+              <Lock className="absolute w-5 h-5 left-3 top-3 text-muted-foreground" />
               <Input
                 type="password"
-                placeholder="Confirm Password"
+                placeholder="Confirm password"
                 className="pl-10"
                 value={formData.confirmPassword}
                 onChange={(e) =>
                   setFormData({ ...formData, confirmPassword: e.target.value })
                 }
+                data-testid="confirm-password-input"
                 required
               />
             </div>
@@ -136,11 +138,11 @@ const RegisterPage = () => {
           </Button>
         </form>
 
-        <div className="text-center text-sm">
+        <div className="text-sm text-center">
           Already have an account?{" "}
           <Link
             href="/login"
-            className="text-primary hover:underline font-medium"
+            className="font-medium text-primary hover:underline"
           >
             Sign in
           </Link>

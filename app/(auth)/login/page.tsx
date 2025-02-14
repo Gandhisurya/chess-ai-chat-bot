@@ -35,7 +35,7 @@ const LoginPage = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        toast.warning(data.message || "Login failed");
+        toast.warning(data?.message || "Login failed");
       }
 
       const userData = {
@@ -59,9 +59,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gray-50">
+    <div className="flex items-center justify-center w-full h-screen bg-gray-50">
       <Card className="w-full max-w-md p-8 space-y-6">
-        <div className="text-center space-y-2">
+        <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Welcome To Chess AI Bot</h1>
           <p className="text-muted-foreground">
             Enter your credentials to access your account
@@ -70,7 +70,7 @@ const LoginPage = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <div className="relative">
-              <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+              <Mail className="absolute w-5 h-5 left-3 top-3 text-muted-foreground" />
               <Input
                 type="email"
                 placeholder="Email"
@@ -86,7 +86,7 @@ const LoginPage = () => {
 
           <div className="space-y-2">
             <div className="relative">
-              <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+              <Lock className="absolute w-5 h-5 left-3 top-3 text-muted-foreground" />
               <Input
                 type="password"
                 placeholder="Password"
@@ -105,11 +105,11 @@ const LoginPage = () => {
           </Button>
         </form>
 
-        <div className="text-center text-sm">
+        <div className="text-sm text-center">
           Don&apos;t have an account?{" "}
           <Link
             href="/register"
-            className="text-primary hover:underline font-medium"
+            className="font-medium text-primary hover:underline"
           >
             Sign up
           </Link>
