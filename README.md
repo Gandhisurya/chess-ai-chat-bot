@@ -24,7 +24,7 @@ Authentication: JWT-based authentication
 
 📜 Architecture Diagram
 
-![Architecture Diagram]([https://your-image-url.com/image.png](https://drive.google.com/file/d/1EHc1NcsDzJcv1K1Eu6MeU9mmcbEzKtkc/view?usp=sharing))
+![Architecture Diagram]([https://res.cloudinary.com/dgxkm6xef/image/upload/v1739552094/Screenshot_2025-02-14_at_8.00.17_PM_duyggv.png))
 
 📊 Database Schema
 
