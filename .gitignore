@@ -40,4 +40,4 @@ next-env.d.ts
 /cypress/screenshots/
 /cypress/videos/
 /cypress/downloads/
-/cypress
+/cypress/e2e
